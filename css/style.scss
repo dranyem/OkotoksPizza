@@ -1,0 +1,159 @@
+@import "variables";
+@import "content-location";
+@import "content-about-us";
+@import "content-home";
+@import "content-menu";
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+body {
+  background: $light-background-color;
+  font-family: sans-serif;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(20vh, auto) minmax(70vh, auto) minmax(10vh, auto);
+  row-gap: 1vh;
+}
+.header {
+  display: grid;
+  position: sticky;
+  top: 9vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 8vh;
+  row-gap: 1vh;
+}
+.header-banner {
+  display: grid;
+  height: 10vh;
+  background: $dark-background-color;
+  box-shadow: $container-shadow;
+  grid-template-areas:
+    "name logo tel"
+    "quote logo tel";
+  grid-template-columns: 3fr 1fr 3fr;
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+  border-radius: 1vw;
+
+  #restaurant-name {
+    grid-area: name;
+    font-family: "Lemon", cursive;
+    font-size: 100%;
+    color: $text-color;
+    text-align: center;
+    padding: 10px;
+    text-shadow: $text-shadow;
+  }
+  #restaurant-quote {
+    grid-area: quote;
+    font-size: 90%;
+    font-family: cursive;
+    text-align: center;
+    color: $text-color;
+  }
+  #logo {
+    grid-area: logo;
+    width: 120%;
+  }
+  #tel-num-text {
+    grid-area: tel;
+    text-decoration: none;
+    color: $text-color;
+    font-size: 120%;
+    font-weight: bolder;
+    padding: 10px;
+    text-align: center;
+  }
+  a[href*="tel:"] {
+    cursor: default;
+  }
+}
+
+.header-links ul {
+  display: grid;
+  grid-gap: 1vw;
+  list-style: none;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+  a {
+    display: block;
+    background: $dark-background-color;
+    text-decoration: none;
+    border-radius: 2vw;
+    padding: 10px;
+    font-weight: bolder;
+    text-align: center;
+    color: $text-color;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    transition: 0.6s ease;
+    box-shadow: $container-shadow;
+
+    &:hover {
+      background: $text-color;
+      color: $dark-background-color;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  box-shadow: $container-shadow;
+  background: $dark-background-color;
+  border-radius: 1vw;
+}
+.footer {
+  display: grid;
+  margin-left: 5vw;
+  margin-bottom: 1vh;
+  margin-right: 5vw;
+  background: $dark-background-color;
+  box-shadow: $container-shadow;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  border-radius: 0.5vw;
+}
+
+.footer img {
+  max-width: 100%;
+  width: 30px;
+}
+
+
+/*Tablet*/
+@media only screen and (max-width: 800px) {
+  .header {
+    top: 1vh;
+    margin-top: 2vh;
+  }
+  .header-links ul {
+    grid-template-columns: 1fr 1fr 0 1fr 1fr;
+  }
+}
+/*Mobile*/
+@media only screen and (max-width: 500px) {
+  .header,
+  .content,
+  .footer {
+    margin: 0;
+  }
+  .header {
+    row-gap: 0;
+    top: 0;
+  }
+  .header-links ul {
+    display: block;
+  }
+  #tel-num-text {
+    a[href*="tel:"] {
+      cursor: default;
+    }
+  }
+}

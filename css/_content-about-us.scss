@@ -1,0 +1,63 @@
+.about-us-content {
+  display: grid;
+}
+.about-us-main-content {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  place-self: center;
+  h1 {
+    text-align: center;
+    place-self: center;
+    padding: 10px;
+    color: $light-background-color;
+    background: $text-color;
+    width: 95%;
+    border-radius: 1vw;
+    margin: 1vw;
+  }
+  p {
+    text-align: center;
+    padding: 0 3vw;
+    line-height: 2.2;
+    font-size: 1.3rem;
+    img:nth-child(1) {
+      float: right;
+      clear: right;
+      width: 350px;
+      border-radius: 1vw;
+      box-shadow: $container-shadow;
+      margin: 1vw;
+    }
+    img:nth-child(2) {
+      float: left;
+      clear: left;
+      width: 250px;
+      border-radius: 1vw;
+      box-shadow: $container-shadow;
+      margin: 1vw;
+    }
+    img:nth-child(3) {
+      float: right;
+      clear: right;
+      width: 200px;
+      border-radius: 1vw;
+      margin: 1vw;
+    }
+    img:nth-child(4) {
+      float: left;
+      clear: left;
+      width: 350px;
+      border-radius: 1vw;
+      box-shadow: $container-shadow;
+      margin: 1vw;
+    }
+    img:nth-child(5) {
+      float: right;
+      clear: right;
+      width: 200px;
+      border-radius: 1vw;
+      box-shadow: $container-shadow;
+      margin: 1vw;
+    }
+  }
+}
